@@ -3,8 +3,6 @@ Given a paragraph and a list of banned words, return the most frequent word that
 
 Words in the list of banned words are given in lowercase, and free of punctuation.  Words in the paragraph are not case sensitive.  The answer is in lowercase.
 
- 
-
 Example:
 
 Input: 
@@ -17,7 +15,6 @@ Explanation:
 Note that words in the paragraph are not case sensitive,
 that punctuation is ignored (even if adjacent to words, such as "ball,"), 
 and that "hit" isn't the answer even though it occurs more because it is banned.
- 
 
 Note:
 
