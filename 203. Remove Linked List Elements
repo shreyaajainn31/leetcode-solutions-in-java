@@ -1,0 +1,31 @@
+Remove all elements from a linked list of integers that have value val.
+
+Example:
+
+Input:  1->2->6->3->4->5->6, val = 6
+Output: 1->2->3->4->5
+Question link: https://leetcode.com/problems/remove-linked-list-elements
+
+------------------------------------------------------------------------
+
+
+class Solution {
+    public ListNode removeElements(ListNode head, int val) {
+        
+        ListNode dummy = new ListNode(0);
+        ListNode curr1 = dummy;
+        
+        ListNode curr = head;
+        while(curr !=null){
+            
+            if(curr.val!=val){
+                ListNode n = new ListNode(curr.val);
+                curr1.next = n;
+                curr1 = curr1.next;
+            }
+            curr = curr.next;
+        }
+        
+        return dummy.next;
+    }
+}
