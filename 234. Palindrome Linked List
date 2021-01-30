@@ -1,0 +1,66 @@
+Given a singly linked list, determine if it is a palindrome.
+
+Example 1:
+
+Input: 1->2
+Output: false
+Example 2:
+
+Input: 1->2->2->1
+Output: true
+
+Question link: https://leetcode.com/problems/palindrome-linked-list/
+-----------------------------------------------------------------------------------
+
+class Solution {
+    
+    public int findLength(ListNode head){
+        
+        int count = 0;
+        ListNode curr = head;
+        while(curr!=null){
+            count++;
+            curr = curr.next;
+        }
+        
+        return count;
+    }
+    
+    public boolean isPalindrome(ListNode head) {
+        
+        
+        if(head == null || head.next == null){
+            return true;
+        }
+        
+        boolean ans = true;
+        ListNode curr = head;
+        int length = findLength(head);
+        
+        Stack<Integer> stack = new Stack<Integer>();
+        int half = length/2;
+        
+        for(int i = 0; i<half; i++){
+            curr = curr.next;
+        }
+        
+        for(int i = half; i<length; i++){
+            stack.push(curr.val);
+            curr = curr.next;
+        }
+        
+        curr = head;
+        while(stack.empty() == false){
+            
+            int t = stack.peek();
+            stack.pop();
+            if(curr.val != t){
+                ans = false;
+                break;
+            }
+            curr = curr.next;
+        }
+        
+        return ans; 
+    }
+}
