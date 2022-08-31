@@ -38,8 +38,6 @@ class Solution {
             l = l.next;
         }
         
-        System.out.println(l.val);
-        
         if(l.next.next == null){
             l.next = null;
         }
