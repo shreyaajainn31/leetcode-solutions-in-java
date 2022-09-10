@@ -8,25 +8,12 @@ class Solution {
         }
         int count = 0;
         for(char c : map.keySet()){
-           
-            if(s.length() % 2 != 0){
-                
-                if(map.get(c) % 2 != 0){
-                    count++;
-                }
-                if(count > 1){
-                    return false;
-                }
-                
-            }
-            else{
-                if(map.get(c) % 2 != 0){
-                    return false;
-                }
+            if(map.get(c) % 2 != 0){
+                 count++;
             }
         }
         
-        return true;
+        return count<=1;
         
         
     }
