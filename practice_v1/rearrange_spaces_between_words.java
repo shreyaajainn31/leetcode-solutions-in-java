@@ -7,8 +7,7 @@ class Solution {
             if(Character.isSpace(c)){
                 count++;
             }
-        }
-        
+        }   
         return count;
     }
     
