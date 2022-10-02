@@ -45,7 +45,6 @@ class Solution {
             }
         }
         
-        
         while(!stack.isEmpty()){
             sb.append(stack.pop());
         }
